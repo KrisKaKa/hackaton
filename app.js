@@ -134,7 +134,7 @@ async.series([
   }
   ,
   function insert_default3(callback) {
-    const detail = {CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:5, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb4'};
+    var detail = {CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:5, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb4'};
     client.query('INSERT INTO DETAILS set ?', detail, callback);
     detail = {CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:16, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb5'};
     client.query('INSERT INTO DETAILS set ?', detail, callback);
