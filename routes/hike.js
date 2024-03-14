@@ -81,7 +81,7 @@ exports.myEvents = function(req, res) {
   'E.EVENT_DATE, ' +
   'E.NAME,' +
   'E.TYPE,' + 
-  'if ( E.EVENT_ID in (Select * from CUST_EVENTS where CUSTOMER_STRAVA=' +input.CUSTOMER_STRAVA +  "), 'true','false') as participate " + 
+  'if ( E.EVENT_ID in (Select CE.EVENT_ID from CUST_EVENTS as CE where CUSTOMER_STRAVA=' +input.CUSTOMER_STRAVA +  "), 'true','false') as participate " + 
   'FROM EVENTS as E', function(err,
 rows) {
     if (err) {
