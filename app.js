@@ -16,7 +16,7 @@ const express = require('express')
   , errorhandler = require('errorhandler');
 
   const uuid = require('node-uuid');
-  
+
 const { connect } = require('http2');
 
 const app = express()
@@ -63,6 +63,10 @@ function init() {
   console.log('add/joint event!')
   app.get('/events', hike.events);
   console.log('eventss!')
+  app.get('/events', hike.events);
+  console.log('eventss!')
+  app.get('/details', hike.details);
+  console.log('details!')
   
 
   http.createServer(app).listen(8080, function(){
