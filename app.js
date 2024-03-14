@@ -137,12 +137,12 @@ async.series([
   }
   ,
   function insert_default4(callback) {
-    var detail = {CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:5, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb4'};
+    var detail = {DETAILS_ID: uuid.v4(), CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:5, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb4'};
     client.query('INSERT INTO DETAILS set ?', detail, callback);
     console.log('dodalem rekordy do bazy DETAILS')
   },
   function insert_default5(callback) {
-      var detail = {CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:16, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb5'};
+      var detail = {DETAILS_ID: uuid.v4(), CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:16, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb5'};
     client.query('INSERT INTO DETAILS set ?', detail, callback);
     console.log('dodalem rekordy do bazy DETAILS')
   }
