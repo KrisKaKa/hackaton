@@ -127,19 +127,23 @@ async.series([
     var eventstrava = {EVENT_DATE: new Date(), NAME: 'Biegnij Warszawo',
           TYPE: 'Running', CREATE_DATE: new Date(), IS_DELETED: false, EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb4'};
     client.query('INSERT INTO EVENTS set ?', eventstrava, callback);
-    eventstrava = {EVENT_DATE: new Date(), NAME: 'Biegnaj w Beskidach',
+    console.log('dodalem rekordy do bazy')
+  },
+  function insert_default3(callback) {
+     var eventstrava = {EVENT_DATE: new Date(), NAME: 'Biegnaj w Beskidach',
           TYPE: 'Running', CREATE_DATE: new Date(), IS_DELETED: false, EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb5'};
     client.query('INSERT INTO EVENTS set ?', eventstrava, callback);
-    console.log('dodalem rekordy do bazy')
+    console.log('dodalem rekordy do bazy');
   }
   ,
-  function insert_default3(callback) {
+  function insert_default4(callback) {
     var detail = {CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:5, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb4'};
     client.query('INSERT INTO DETAILS set ?', detail, callback);
-    detail = {CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:16, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb5'};
+    console.log('dodalem rekordy do bazy DETAILS')
+  },
+  function insert_default5(callback) {
+      var detail = {CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:16, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb5'};
     client.query('INSERT INTO DETAILS set ?', detail, callback);
-    
-    
     console.log('dodalem rekordy do bazy DETAILS')
   }
 ], function (err, results) {
