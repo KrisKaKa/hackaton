@@ -11,9 +11,10 @@ rows) {
 };
 exports.add_hike = function(req, res){
   const input = req.body.hike;
+  console.log('Request to log event req.body:'+ req.body.hike.NAME+'<-'); 
   const event = { EVENT_DATE: new Date(), EVENT_ID: uuid.v4(), NAME: input.NAME,
-  TYPE: input.TYPE, EVENT_DATE: new Date(), IS_DELETED: input.IS_DELETED};
-  console.log('Request to log event:' + JSON.stringify(event));
+  TYPE: input.TYPE, CREATE_DATE: new Date(), IS_DELETED: input.IS_DELETED};
+  console.log('Request to log event po nowemu:' + JSON.stringify(event));
   req.app.get('connection').query('INSERT INTO EVENTS set ?', event, function(err) {
       if (err) {
         res.send(err);
