@@ -67,7 +67,7 @@ function init() {
   //console.log('eventss!')
   app.get('/details', hike.details);
   console.log('details!')
-  app.get('/myEvents', hike.myevents);
+  app.get('/myEvents', hike.myEvents);
   console.log('myevents!')
 
   http.createServer(app).listen(8080, function(){
