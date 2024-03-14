@@ -26,7 +26,8 @@ exports.add_hike = function(req, res){
 
 exports.add_ce = function(req, res){
   console.log('Request to log event-cust relation req.body:'+ req.body+'<-'); 
-  const input = JSON.parse(req.body);
+  //const input = JSON.parse(req.body);
+  const input = req.body;
   console.log('Request to log event-cust relation req.body parsed:'+ input+'<-'); 
   const ce_event = { CE_ID: uuid.v4(), EVENT_ID: input.EVENT_ID,
   CUTOMER_STRAVA: input.CUSTOMER_STRAVA};
