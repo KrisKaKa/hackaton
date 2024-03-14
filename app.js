@@ -142,6 +142,19 @@ async.series([
     console.log('dodalem rekordy do bazy');
   }
   ,
+  function insert_default6(callback) {
+    var eventstrava = {EVENT_DATE: new Date(), NAME: 'Wings For Life',
+          TYPE: 'Running', CREATE_DATE: new Date(), IS_DELETED: false, EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb6'};
+    client.query('INSERT INTO EVENTS set ?', eventstrava, callback);
+    console.log('dodalem rekordy do bazy')
+  },
+  function insert_default7(callback) {
+     var eventstrava = {EVENT_DATE: new Date(), NAME: 'Spring Run in Park Slaski',
+          TYPE: 'Running', CREATE_DATE: new Date(), IS_DELETED: false, EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb7'};
+    client.query('INSERT INTO EVENTS set ?', eventstrava, callback);
+    console.log('dodalem rekordy do bazy');
+  }
+  ,
   function insert_default4(callback) {
     var detail = {DETAILS_ID: uuid.v4(), CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:5, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb4'};
     client.query('INSERT INTO DETAILS set ?', detail, callback);
@@ -149,6 +162,22 @@ async.series([
   },
   function insert_default5(callback) {
       var detail = {DETAILS_ID: uuid.v4(), CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:16, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb5'};
+    client.query('INSERT INTO DETAILS set ?', detail, callback);
+    console.log('dodalem rekordy do bazy DETAILS')
+  }
+  ,
+  function insert_default8(callback) {
+    var detail = {DETAILS_ID: uuid.v4(), CUSTOMER_STRAVA: '32299812', TYPE: 'Running', NUMBER_LEFT:10, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb6'};
+    client.query('INSERT INTO DETAILS set ?', detail, callback);
+    console.log('dodalem rekordy do bazy DETAILS')
+  },
+  function insert_default9(callback) {
+      var detail = {DETAILS_ID: uuid.v4(), CUSTOMER_STRAVA: '2598605', TYPE: 'Running', NUMBER_LEFT:6, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb4'};
+    client.query('INSERT INTO DETAILS set ?', detail, callback);
+    console.log('dodalem rekordy do bazy DETAILS')
+  },
+  function insert_default10(callback) {
+      var detail = {DETAILS_ID: uuid.v4(), CUSTOMER_STRAVA: '2598605', TYPE: 'Running', NUMBER_LEFT:4, SI: 'km', EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb7'};
     client.query('INSERT INTO DETAILS set ?', detail, callback);
     console.log('dodalem rekordy do bazy DETAILS')
   }
