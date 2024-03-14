@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(action="/add_hike", method="post")
+    table(border="1")
+      tr
+        td Event Name
+        td
+          input(name="hike[NAME]", type="textbox")
+      tr
+        td Event Type
+        td
+          input(name="hike[TYPE]", type="textbox")
+      tr
+        td Deleted?
+        td
+          input(name="hike[IS_DELETED]", type="radio", value="true")
+          | Tak
+          input(name="hike[IS_DELETED]", type="radio", value="false", checked)
+          | Nie
+      tr
+        td(colspan="2")
+          input(type="submit", value="Record Event")
+
+  div
+    h3 Hikes
+    table(border="1")
+      tr
+        td Date
+        td Name
+        td Type
+        td Deleted?
+      each hike in hikes
+        tr
+          td #{hike.EVENT_DATE.toDateString()}
+          td #{hike.NAME}
+          td #{hike.TYPE}
+          td #{hike.IS_DELETED.toString()}
