@@ -114,7 +114,7 @@ async.series([
                       'EVENT_ID VARCHAR(40), ' +
                       'CUSTOMER_STRAVA VARCHAR(40), ' +
                       'TYPE VARCHAR(40), ' +
-                      'NUMBER_LEFT, INT' +
+                      'NUMBER_LEFT INT,' +
                       'SI VARCHAR(40), ' +
                       'PRIMARY KEY(DETAILS_ID))', callback);
 },
