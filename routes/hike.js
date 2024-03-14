@@ -70,3 +70,25 @@ rows) {
       //res.send('events', JSON.stringify(rows));
   }}); 
 };
+
+exports.myEvents = function(req, res) {
+  console.log('Request to log myEvents  relation req.body:'+ req.body+'<-'); 
+  //const input = JSON.parse(req.body);
+  const input = req.body;
+  res.app.get('connection').
+  query( 
+  'SELECT E.EVENT_ID, ' +
+  'E.EVENT_DATE, ' +
+  'E.NAME,' +
+  'E.TYPE,' + 
+  'if ( E.EVENT_ID in (Select * from CUST_EVENTS) where CUSTOMER_STRAVA=' +input.CUSTOMER_STRAVA +  "), 'true','false' as participate " + 
+  'FROM EVENTS as E', function(err,
+rows) {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log(JSON.stringify(rows));
+      res.status(200).send(JSON.stringify(rows))
+      //res.send('events', JSON.stringify(rows));
+  }}); 
+};
