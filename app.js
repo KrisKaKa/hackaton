@@ -55,6 +55,9 @@ function init() {
   console.log('hikes!')
   app.post('/add_hike', hike.add_hike);
   console.log('add hike!')
+  app.post('/add_ce', hike.add_ce);
+  console.log('add/joint event!')
+
 
   http.createServer(app).listen(8080, function(){
     console.log("Express server listening on port " + 8080);
