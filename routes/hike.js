@@ -1,5 +1,5 @@
 const uuid = require('node-uuid');
-var request = require('request');
+//var request = require('request');
 
 exports.index = function(req, res) {
   res.app.get('connection').query( 'SELECT * FROM EVENTS', function(err,
