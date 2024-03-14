@@ -19,7 +19,7 @@ exports.add_hike = function(req, res){
       if (err) {
         res.send(err);
       } else {
-        res={"statsCode":200, "body":"OK"};
+        res.redirect('/hikes');
       }
    });
 };
@@ -36,7 +36,7 @@ exports.add_ce = function(req, res){
       if (err) {
         res.send(err);
       } else {
-        res.redirect('/hikes');
+        res={"statsCode":200, "body":"OK"};
       }
    });
 };
