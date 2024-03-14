@@ -82,26 +82,8 @@ exports.myEvents = function(req, res) {
   'E.EVENT_DATE, ' +
   'E.NAME,' +
   'E.TYPE,' + 
-  'if ( E.EVENT_ID in (Select CE.EVENT_ID from CUST_EVENTS as CE where CUSTOMER_STRAVA=' +input.CUSTOMER_STRAVA +  "), 'true','false') as participate " + 
+  'if ( E.EVENT_ID in (Select CE.EVENT_ID from CUST_EVENTS as CE where CUSTOMER_STRAVA=' +input.CUSTOMER_STRAVA +  "), true,false) as participate " + 
   'FROM EVENTS as E', function(err,
-rows) {
-    if (err) {
-      res.send(err);
-    } else {
-      console.log(JSON.stringify(rows));
-      res.status(200).send(JSON.stringify(rows))
-      //res.send('events', JSON.stringify(rows));
-  }}); 
-};
-
-exports.details2 = function(req, res) {
-  console.log('Request to log details  relation req.body:'+ req.body+'<-'); 
-  //const input = JSON.parse(req.body);
-  const input = req.body;
-
-  req.headers
-
-  res.app.get('connection').query( 'SELECT * FROM DETAILS WHERE CUSTOMER_STRAVA='+input.CUSTOMER_STRAVA, function(err,
 rows) {
     if (err) {
       res.send(err);
