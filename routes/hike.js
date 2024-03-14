@@ -25,6 +25,7 @@ exports.add_hike = function(req, res){
 };
 
 exports.add_ce = function(req, res){
+  req.
   console.log('Request to log event-cust relation req.body:'+ req.body+'<-'); 
   //const input = JSON.parse(req.body);
 const input = req.body;

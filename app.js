@@ -67,6 +67,7 @@ function init() {
   //console.log('eventss!')
   app.get('/details', hike.details);
   console.log('details!')
+  app.post('/myEvents', hike.myEvents);
   app.get('/myEvents', hike.myEvents);
   console.log('myevents!')
 
