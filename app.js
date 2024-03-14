@@ -63,8 +63,8 @@ function init() {
   console.log('add/joint event!')
   app.get('/events', hike.events);
   console.log('eventss!')
-  app.get('/events', hike.events);
-  console.log('eventss!')
+  //app.get('/events', hike.events);
+  //console.log('eventss!')
   app.get('/details', hike.details);
   console.log('details!')
   
@@ -136,8 +136,8 @@ async.series([
     console.log('dodalem rekordy do bazy')
   },
   function insert_default3(callback) {
-     var eventstrava = {EVENT_DATE: new Date(), NAME: 'Biegnaj w Beskidach',
-          TYPE: 'Running', CREATE_DATE: new Date(), IS_DELETED: false, EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb5'};
+     var eventstrava = {EVENT_DATE: new Date(), NAME: 'Biking in Beskidy',
+          TYPE: 'Biking', CREATE_DATE: new Date(), IS_DELETED: false, EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb5'};
     client.query('INSERT INTO EVENTS set ?', eventstrava, callback);
     console.log('dodalem rekordy do bazy');
   }
