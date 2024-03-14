@@ -124,7 +124,7 @@ async.series([
     console.log('dodalem powizanie klient - event  do bazy')
   },
   function insert_default2(callback) {
-    const eventstrava = {EVENT_DATE: new Date(), NAME: 'Biegnij Warszawo',
+    var eventstrava = {EVENT_DATE: new Date(), NAME: 'Biegnij Warszawo',
           TYPE: 'Running', CREATE_DATE: new Date(), IS_DELETED: false, EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb4'};
     client.query('INSERT INTO EVENTS set ?', eventstrava, callback);
     eventstrava = {EVENT_DATE: new Date(), NAME: 'Biegnaj w Beskidach',
