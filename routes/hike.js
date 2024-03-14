@@ -49,6 +49,7 @@ rows) {
       res.send(err);
     } else {
       console.log(JSON.stringify(rows));
-      res.send('events', JSON.stringify(rows));
+      res.status(200).send(JSON.stringify(rows))
+      //res.send('events', JSON.stringify(rows));
   }});
 };
