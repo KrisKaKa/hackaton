@@ -15,6 +15,8 @@ const express = require('express')
   , morgan = require('morgan')
   , errorhandler = require('errorhandler');
 
+  const uuid = require('node-uuid');
+  
 const { connect } = require('http2');
 
 const app = express()
