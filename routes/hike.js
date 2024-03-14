@@ -30,7 +30,7 @@ exports.add_ce = function(req, res){
   const ce_event = { CE_ID: uuid.v4(), EVENT_ID: input.EVENT_ID,
   CUTOMER_STRAVA: input.CUSTOMER_STRAVA};
   console.log('Request to log event-customer:' + ce_event);
-  req.app.get('connection').query('INSERT INTO EVENTS set ?', ce_event, function(err) {
+  req.app.get('connection').query('INSERT INTO CUST_EVENTS set ?', ce_event, function(err) {
       if (err) {
         res.send(err);
       } else {
