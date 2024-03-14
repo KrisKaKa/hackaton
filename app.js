@@ -67,7 +67,8 @@ function init() {
   console.log('eventss!')
   app.get('/details', hike.details);
   console.log('details!')
-  
+  app.get('/myEvents', myevents.details);
+  console.log('myevents!')
 
   http.createServer(app).listen(8080, function(){
     console.log("Express server listening on port " + 8080);
