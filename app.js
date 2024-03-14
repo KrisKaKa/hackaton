@@ -66,6 +66,7 @@ function init() {
   app.get('/details2', hike.details2);
   console.log('druga wersja details z wolaniem API!')
   app.get('/details', hike.details);
+  app.post('/details', hike.details);
   console.log('details!')
   app.post('/myEvents', hike.myEvents);
   app.get('/myEvents', hike.myEvents);
