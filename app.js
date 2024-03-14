@@ -63,8 +63,8 @@ function init() {
   console.log('add/joint event!')
   app.get('/events', hike.events);
   console.log('eventss!')
-  //app.get('/events', hike.events);
-  //console.log('eventss!')
+  app.get('/details2', hike.details2);
+  console.log('druga wersja details z wolaniem API!')
   app.get('/details', hike.details);
   console.log('details!')
   app.get('/myEvents', hike.myEvents);

@@ -92,3 +92,21 @@ rows) {
       //res.send('events', JSON.stringify(rows));
   }}); 
 };
+
+exports.details2 = function(req, res) {
+  console.log('Request to log details  relation req.body:'+ req.body+'<-'); 
+  //const input = JSON.parse(req.body);
+  const input = req.body;
+
+  req.headers
+
+  res.app.get('connection').query( 'SELECT * FROM DETAILS WHERE CUSTOMER_STRAVA='+input.CUSTOMER_STRAVA, function(err,
+rows) {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log(JSON.stringify(rows));
+      res.status(200).send(JSON.stringify(rows))
+      //res.send('events', JSON.stringify(rows));
+  }}); 
+};
