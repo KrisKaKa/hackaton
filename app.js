@@ -103,7 +103,7 @@ async.series([
  },
   function insert_default(callback) {
     const hike = {CUSTOMER_STRAVA: '32299812', EVENT_ID:'bbbccda7-d6a1-461e-aec2-315ca8a07eb4', CE_ID: '12345'};
-    client.query('INSERT INTO HIKES set ?', hike, callback);
+    client.query('INSERT INTO CUST_EVENTS set ?', hike, callback);
     console.log('dodalem powizanie klient - event  do bazy')
   },
   function insert_default2(callback) {
