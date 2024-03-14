@@ -46,6 +46,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 function init() {
+  console.log('dodaje app JSON!')
+  app.use(express.json());
   console.log('zaczynam!')
   app.get('/', routes.index);
   console.log('routes!')
