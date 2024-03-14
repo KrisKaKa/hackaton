@@ -40,3 +40,15 @@ exports.add_ce = function(req, res){
       }
    });
 };
+
+
+exports.events = function(req, res) {
+  res.app.get('connection').query( 'SELECT * FROM EVENTS', function(err,
+rows) {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log(JSON.stringify(rows));
+      res.send('events', JSON.stringify(rows));
+  }});
+};

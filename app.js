@@ -59,7 +59,9 @@ function init() {
   console.log('add hike!')
   app.post('/add_ce', hike.add_ce);
   console.log('add/joint event!')
-
+  app.get('/events', hike.events);
+  console.log('eventss!')
+  
 
   http.createServer(app).listen(8080, function(){
     console.log("Express server listening on port " + 8080);
@@ -106,6 +108,16 @@ async.series([
                         'IS_DELETED BOOL, ' +
                         'PRIMARY KEY(EVENT_ID))', callback);
  },
+ function create_table3(callback) {
+  client.query('CREATE TABLE DETAILS (' +
+                      'DETAILS_ID VARCHAR(40), ' +
+                      'EVENT_DATE DATE, ' +
+                      'NAME VARCHAR(40), ' +
+                      'TYPE VARCHAR(40), ' +
+                      'CREATE_DATE DATE, ' +
+                      'IS_DELETED BOOL, ' +
+                      'PRIMARY KEY(DETAILS_ID))', callback);
+},
   function insert_default(callback) {
     const hike = {CUSTOMER_STRAVA: '32299812', EVENT_ID:'bbbccda7-d6a1-461e-aec2-315ca8a07eb4', CE_ID: '12345'};
     client.query('INSERT INTO CUST_EVENTS set ?', hike, callback);
