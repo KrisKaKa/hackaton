@@ -85,14 +85,11 @@ async.series([
     client.query('USE mynode_db', callback);
   },
   function create_table(callback) {
-     client.query('CREATE TABLE HIKES (' +
-                         'ID VARCHAR(40), ' +
-                         'HIKE_DATE DATE, ' +
-                         'NAME VARCHAR(40), ' +
-                         'DISTANCE VARCHAR(40), ' +
-                         'LOCATION VARCHAR(40), ' +
-                         'WEATHER VARCHAR(40), ' +
-                         'PRIMARY KEY(ID))', callback);
+     client.query('CREATE TABLE CUST_EVENTS (' +
+                         'CE_ID VARCHAR(40), ' +
+                         'EVENT_ID VARCHAR(40), ' +
+                         'CUSTOMER_STRAVA VARCHAR(40), ' +
+                         'PRIMARY KEY(CE_ID))', callback);
   },
   function create_table2(callback) {
     client.query('CREATE TABLE EVENTS (' +
@@ -105,13 +102,13 @@ async.series([
                         'PRIMARY KEY(EVENT_ID))', callback);
  },
   function insert_default(callback) {
-    const hike = {HIKE_DATE: new Date(), NAME: 'Hazard Stevens',
-          LOCATION: 'Mt Rainier', DISTANCE: '4,027m vertical', WEATHER:'Bad', ID: '12345'};
+    const hike = {CUSTOMER_STRAVA: '32299812', EVENT_ID:'bbbccda7-d6a1-461e-aec2-315ca8a07eb4', CE_ID: '12345'};
     client.query('INSERT INTO HIKES set ?', hike, callback);
+    console.log('dodalem powizanie klient - event  do bazy')
   },
   function insert_default2(callback) {
     const eventstrava = {EVENT_DATE: new Date(), NAME: 'Biegnij Warszawo',
-          TYPE: 'Running', CREATE_DATE: new Date(), IS_DELETED: false, EVENT_ID: '12345'};
+          TYPE: 'Running', CREATE_DATE: new Date(), IS_DELETED: false, EVENT_ID: 'bbbccda7-d6a1-461e-aec2-315ca8a07eb4'};
     client.query('INSERT INTO EVENTS set ?', eventstrava, callback);
     console.log('dodalem rekordy do bazy')
   }
