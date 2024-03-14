@@ -36,7 +36,7 @@ exports.add_ce = function(req, res){
       if (err) {
         res.send(err);
       } else {
-        res={"statsCode":200, "body":"OK"};
+        res.status(200).send('OK');
       }
    });
 };
